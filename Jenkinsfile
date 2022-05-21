@@ -1,5 +1,6 @@
 pipeline {
-	
+withCredentials([sshUserPrivateKey(credentialsId: 'ssh_key', keyFileVariable: 'ssh_key')]) 
+	{
 agent any
 	stages {
 	stage{
@@ -16,4 +17,4 @@ agent any
 	stage{'deploy'}
 	}
 }
-
+}
